@@ -9,7 +9,20 @@
 </head>
   <body>
     <%- include('navbar', {links: links}) %>
-    <%= message %>
+
+    <ul>
+      <% for (let i = 0; i < messages.length; i++) { %>
+        <li>
+          <ul>
+            <a href="/new/<%= i %>">
+            <li>"<%= messages[i].user %>"</li>
+            <li>"<%= messages[i].text %>"</li>
+            <li>"<%= messages[i].added %>"</li>
+          </ul></a><br>
+        </li>
+      <% } %>
+    </ul>
+
   </body>
   <%- include('footer') %>
 </html>
