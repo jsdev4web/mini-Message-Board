@@ -9,12 +9,16 @@
 <body>
 
     <form method="POST" action="/new">
-        <label>Author Name
-            <input type="text" name="user" value=" <%= locals.user %>" />
+        <label>User Name
+            <input type="text" name="users" value=" <%= locals.user %>" />
         </label>
         <br>
-        <label>Message Text
+        <label>Text
             <input type="text" name="text" value=" <%= locals.text %>" />
+        </label>
+        <br>
+        <label>Date
+            <input type="date" name="date" value=" <%= locals.date %>" />
         </label>
         <br>
         <button type="submit">Submit</button>

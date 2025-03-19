@@ -26,6 +26,7 @@ ul li {
 }
 
 footer {
-  background-color: lightgray;
+  background-color: yellow;
+  color: black;
   padding-bottom: 5%;
 }

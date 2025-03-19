@@ -1,25 +1,21 @@
-const express = require('express')
-const router = express.Router()
-const messages = require('../app');
-const links = require('../app');
+const { Router } = require("express")
+const usersController = require("../controllers/usersController")
+const newRouter = Router()
+
+newRouter.get("/", usersController.getMessages)
+newRouter.get("/:id", usersController.singleMessageGet)
+newRouter.get("/new", usersController.createMessageGet)
+newRouter.post("/new", usersController.createMessagePost)
 
 
-//response to server request
-router.get("/", (req, res, next) => {
-    console.log(messages)
-    res.render("new");
-  });
+module.exports = newRouter;
 
 
-router.post("/", (req, res, next) => {
-    messages.push({ text: req.body.text, user: req.body.user, added: new Date() });
-    res.redirect("/")
-  });
-
-router.get("/:id", (req, res) => { 
-  const id = req.params.id
-  console.log(id)
-      res.render('details', { messages: messages[id] })
-})
-
-module.exports = router;
+//commmands to create db so far
+//CREATE DATABASE mini_messages_board;
+/* 
+mini_messages_board=# CREATE TABLE messages (
+  id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  message VARCHAR ( 255 )
+  ); */
+  

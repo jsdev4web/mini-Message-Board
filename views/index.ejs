@@ -8,23 +8,23 @@
     <title>Home</title>
 </head>
   <body>
-    <%- include('navbar', {links: links}) %>
+    <%- include('partials/navbar', {links: links}) %>
 
     <ul>
       <% for (let i = 0; i < messages.length; i++) { %>
         <li>
           <ul>
-            <a href="/new/<%= i %>">
-            <li>"<%= messages[i].user %>"</li>
+            <a href="/<%= i %>">
             <li>"<%= messages[i].text %>"</li>
-            <li>"<%= messages[i].added %>"</li>
+            <li>"<%= messages[i].users %>"</li>
+            <li>"<%= messages[i].date %>"</li>
           </ul></a><br>
         </li>
       <% } %>
     </ul>
 
   </body>
-  <%- include('footer') %>
+  <%- include('partials/footer') %>
 </html>
 
 
